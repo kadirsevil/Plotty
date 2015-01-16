@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar AnchorPane.bottomAnchor="736.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem fx:id="menuitem_exit" mnemonicParsing="false" text="Exit" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menu_tools" mnemonicParsing="false" text="Tools">
+                     <items>
+                        <Menu fx:id="menu2_serialPort" mnemonicParsing="false" text="Serial Ports      " />
+                        <Menu fx:id="menu2_baudrate" mnemonicParsing="false" text="Baudrate" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem fx:id="menuitem_about" mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <ToolBar prefHeight="0.0" prefWidth="1024.0">
+               <items>
+                  <Separator orientation="VERTICAL" />
+                  <Button fx:id="bt_connect" mnemonicParsing="false" text="Connect" />
+                  <Button fx:id="bt_disconnect" mnemonicParsing="false" text="Disconnect" />
+                  <Separator orientation="VERTICAL" />
+                  <Button fx:id="bt_addGraph" mnemonicParsing="false" text="New Graph" />
+                  <Separator orientation="VERTICAL" />
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <SplitPane fx:id="mainSplitPane" dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+            <SplitPane prefHeight="160.0" prefWidth="200.0">
+              <items>
+                <AnchorPane fx:id="graphArea" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+              </items>
+            </SplitPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <TextField fx:id="infoField" editable="false" BorderPane.alignment="CENTER" />
+               </top>
+               <center>
+                  <TextArea fx:id="txta_console" editable="false" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
